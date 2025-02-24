@@ -33,24 +33,35 @@
 // DefaultGreet("John");
 // DefaultGreet("Omer");
 
-//*** Outer Function returning Object of two closure functions (Encapsulation)
+// //*** Outer Function returning Object of two closure functions (Encapsulation with closure)
 
-function createCounter() {
-    let count = 0; // Private variable
-    return {
-        increment: function () {
-            count++;
-            console.log(`Count: ${count}`);
-        },
-        decrement: function () {
-            count--;
-            console.log(`Count: ${count}`);
-        },
-    };
+// function createCounter() {
+//     let count = 0; // Private variable
+//     return {
+//         increment: function () {
+//             count++;
+//             console.log(`Count: ${count}`);
+//         },
+//         decrement: function () {
+//             count--;
+//             console.log(`Count: ${count}`);
+//         },
+//     };
+// }
+
+// const counter = createCounter();
+// counter.increment();
+// counter.increment();
+// counter.decrement();
+
+
+//*** Real-World Use Case (Event Listener)
+function attachEventHandler(elementId, message) {
+    document.getElementById(elementId).addEventListener("click", function () {
+        console.log(message); // Closure remembers `message`
+    });
 }
 
-const counter = createCounter();
-counter.increment();
-counter.increment();
-counter.decrement();
+attachEventHandler("myButton", "Button clicked!");
+// Here, the event listener callback function remembers the message variable even after attachEventHandler finishes execution.
 
