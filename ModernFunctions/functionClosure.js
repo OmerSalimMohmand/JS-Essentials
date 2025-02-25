@@ -157,15 +157,37 @@
 //___________________________________________________
 
 //*** Curried function to calculate total price including tax
+
+// const calculateTax = (taxRate) => (price) => price + price * taxRate;
+
+// // Pre-configured functions
+// const USATax = calculateTax(0.07); // 7% tax for USA
+// const CanadaTax = calculateTax(0.05); // 5% tax for Canada
+// const EuropeTax = calculateTax(0.2); // 20% tax for Europe
+
+// // Use the pre-configured functions
+// console.log(`USA Total: $${USATax(100).toFixed(2)}`); // $107.00
+// console.log(`Canada Total: $${CanadaTax(100).toFixed(2)}`); // $105.00
+// console.log(`Europe Total: $${EuropeTax(100).toFixed(2)}`); // $120.00
+
+//___________________________________________________
+
+//*** Real-Life Application: prices come from the user's shopping cart and their location determines the tax
+
 const calculateTax = (taxRate) => (price) => price + price * taxRate;
 
-// Pre-configured functions
-const USATax = calculateTax(0.07); // 7% tax for USA
-const CanadaTax = calculateTax(0.05); // 5% tax for Canada
-const EuropeTax = calculateTax(0.2); // 20% tax for Europe
+const regionTaxRates = {
+    USA: 0.07,
+    Canada: 0.05,
+    Europe: 0.2,
+};
 
-// Use the pre-configured functions
-console.log(`USA Total: $${USATax(100).toFixed(2)}`); // $107.00
-console.log(`Canada Total: $${CanadaTax(100).toFixed(2)}`); // $105.00
-console.log(`Europe Total: $${EuropeTax(100).toFixed(2)}`); // $120.00
+const cart = [100, 200, 300];
+const userRegion = "Canada";
 
+const taxCalculator = calculateTax(regionTaxRates[userRegion]);
+
+// Create/Return a new array by applying taxCalculator function to each element of the cart
+const cartWithTax = cart.map(taxCalculator);
+
+console.log(`Cart with tax: $${cartWithTax}`);
