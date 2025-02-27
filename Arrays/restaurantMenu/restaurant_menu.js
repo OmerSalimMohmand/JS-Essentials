@@ -1,5 +1,5 @@
 const breakfastMenu = ['Pancakes', 'Eggs Benedict', 'Oatmeal', 'Frittata'];
-const mainCourseMenu = ['Steak', 'Pasta', 'Burger', 'Salmon'];
+const mainCourseMenu = ['Steak -$15.99', 'Pasta -$14', 'Burger -$15', 'Salmon -$11.99'];
 const dessertMenu = ['Cake', 'Ice Cream', 'Pudding', 'Fruit Salad'];
 
 const breakfastMenuItemsHTML = breakfastMenu.map((item, index) => `<p>Item ${index + 1}: ${item}</p>`).join('');
@@ -7,7 +7,8 @@ const breakfastMenuItemsHTML = breakfastMenu.map((item, index) => `<p>Item ${ind
 
 let mainCourseItem = '';
 mainCourseMenu.forEach((item, index) => {
-    mainCourseItem += `<p>Item ${index + 1}: ${item}</p>`;
+    const [name, price] = item.split(' -')
+    mainCourseItem += `<p>Item ${index + 1}: ${name}&emsp;${price}</p>`;
 });
 document.getElementById('maincourseMenuItems').innerHTML = mainCourseItem;
 
