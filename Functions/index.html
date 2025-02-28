@@ -11,8 +11,20 @@
   <input type="number" id="width"><br><br>
 
   <button onclick="calculateArea()">Calculate Area</button><br><br>
-
   <p id="result"></p>
+  
+  <hr>
+  <label for="grocery1">Enter grocery-1 amount:</label>
+  <input type="text" name="" id="grocery1"><br><br>
+  <label for="grocery2">Enter grocery-2 amount:</label>
+  <input type="text" name="" id="grocery2"><br><br>
+  <label for="grocery3">Enter grocery-3 amount:</label>
+  <input type="text" name="" id="grocery3"><br><br>
+
+  <button onclick="groceryTracker(grocery1.value, grocery2.value, grocery3.value)">Calculate Total Amount</button>
+
+  <p id="total"></p>
+
 <script src="./functions.js"></script>
 </body>
 </html>
