@@ -61,6 +61,25 @@
 
 //*** Date
 
+// const currentDate = new Date();
+// console.log(currentDate);
+// console.log(currentDate.getFullYear());
+// console.log(currentDate.getMonth()); // 0 indexed: getMonth, getHours, getMinutes, getSeconds
+// console.log(currentDate.getDate());
 
+// console.log(currentDate.toLocaleDateString());
+// console.log(currentDate.toLocaleDateString());
+// console.log(currentDate.toLocaleTimeString());
 
+setTimeout(() => {
+    console.log("Late Hello");
+}, 5000);
+
+let count = 0;
+const intervalId = setInterval(function(){
+    console.log("Count: " + count);
+    count++;
+    if(count > 5)
+        clearInterval(intervalId)
+}, 1000);
 
