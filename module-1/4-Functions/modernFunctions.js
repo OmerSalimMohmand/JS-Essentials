@@ -3,7 +3,7 @@
 // function greet(name){
 //     const greeting = "Hello, ";
 
-//     function sayHello(){
+//     function sayHello(){ 
 //         console.log(greeting + name);
 //     }
 
@@ -23,7 +23,7 @@
 // function greet(language){
 //     const greeting = language === "fr" ? "Bonjoure, " : "Hello, ";
 
-//     return function sayHello(name){
+//     return function sayHello(name){ //function name sayHello is optional here
 //         console.log(greeting + name);
 //     }
 // }
