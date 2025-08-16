@@ -86,6 +86,12 @@
 // console.log(addTwo(3)); // Output: 5
 // console.log(curriedAdd(5)(9)); // Output: 9
 
+//--- A chain implementation of CurriedAdd
+
+// console.log(curriedAdd(4)(5));
+// console.log(curriedAdd(6)(curriedAdd(4)(5)));
+// console.log(curriedAdd(7)(curriedAdd(6)(curriedAdd(4)(5))));
+
 //___________________________________________________
 
 //*** Calculating different powers
@@ -127,7 +133,7 @@
 
 // const multiply = a => b => a * b;
 
-// const double = multiply(2);
+// const double = multiply(2); // doubling is in fact a multiplier function with one arg preset as 2.
 // const triple = multiply(3);
 
 // console.log(double(5));
@@ -158,23 +164,23 @@
 
 //*** Curried function to calculate total price including tax
 
-// const calculateTax = (taxRate) => (price) => price + price * taxRate;
+// const calTotalPrice = (rate) => (price) => (price + price * rate).toFixed(2);
 
-// // Pre-configured functions
-// const USATax = calculateTax(0.07); // 7% tax for USA
-// const CanadaTax = calculateTax(0.05); // 5% tax for Canada
-// const EuropeTax = calculateTax(0.2); // 20% tax for Europe
+// // Pre-configured functions which presets some arguments and pass functions around with some arguments pre-filled.
+// const USATPrice = calTotalPrice(0.07); // 7% tax for USA
+// const CanadaTPrice = calTotalPrice(0.05); // 5% tax for Canada
+// const EuropeTPrice = calTotalPrice(0.2); // 20% tax for Europe
 
 // // Use the pre-configured functions
-// console.log(`USA Total: $${USATax(100).toFixed(2)}`); // $107.00
-// console.log(`Canada Total: $${CanadaTax(100).toFixed(2)}`); // $105.00
-// console.log(`Europe Total: $${EuropeTax(100).toFixed(2)}`); // $120.00
+// console.log(`USA Tota Price: $${USATPrice(100)}`); // $107.00
+// console.log(`Canada Total Price: $${CanadaTPrice(100)}`); // $105.00
+// console.log(`Europe Total Price: $${EuropeTPrice(100)}`); // $120.00
 
 //___________________________________________________
 
 //*** Real-Life Application: prices come from the user's shopping cart and their location determines the tax
 
-const calculateTax = (taxRate) => (price) => price + price * taxRate;
+const calTotalPrice = (taxRate) => (price) => price + price * taxRate;
 
 const regionTaxRates = {
     USA: 0.07,
@@ -185,9 +191,9 @@ const regionTaxRates = {
 const cart = [100, 200, 300];
 const userRegion = "Canada";
 
-const taxCalculator = calculateTax(regionTaxRates[userRegion]);
+const calTPrice = calTotalPrice(regionTaxRates[userRegion]);
 
 // Create/Return a new array by applying taxCalculator function to each element of the cart
-const cartWithTax = cart.map(taxCalculator);
+const cartWithTax = cart.map(calTPrice);
 
 console.log(`Cart with tax: $${cartWithTax}`);
