@@ -8,6 +8,11 @@
 // console.log(fruits); // remained items
 // console.log(deletedItems); // deleted items
 
+// const deletedElements = fruits.splice(0, 2);
+// cars.unshift(...deletedElements)
+// console.log(fruits);
+// console.log(deletedElements)
+
 // const recombinedItems = fruits.concat(deletedItems);
 // console.log(recombinedItems);
 
@@ -34,7 +39,7 @@ const fruits = Array("orange", "banana", "watermelon", "apple", "strawberries");
 
 const numbers = Array(5, 2, 9, 1, 6);
 
-// numbers.sort((a, b) => a - b);  //if comparison funcion returns positive swap else don't swap
+// numbers.sort((a, b) => a - b);  //Arguments order (a, b) matters. if comparison funcion returns positive swap else don't swap
 // console.log(numbers);
 
 // numbers.sort((a, b) => b - a);
