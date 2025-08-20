@@ -71,3 +71,35 @@ const numbers = Array(5, 2, 9, 1, 6);
 // people.sort((a, b) => a.age === b.age ? a.name.localeCompare(b.name) : a.age - b.age);
 // console.log(people);
 
+//*** Array Methods:
+
+// const users = [
+//     {name: 'Omer', email: 'omer@gmail.com', age: 30},
+//     {name: 'Lima', email: 'lima@yahoo.com', age: 45},
+//     {name: 'Yama', email: 'yama@hotmail.com', age: 34},
+//     {name: 'Ali', email: 'ali@outlook.com', age: 36}
+// ];
+// const user_emails = users.map((user) => user.email);
+// console.log(user_emails)
+
+// const minAge = 34;
+// const maxAge = 36;
+
+// const eligible_users = users.filter((user) => user.age >= minAge && user.age <= maxAge);
+// console.log(eligible_users);
+
+// const eligible_users = users.filter((user) => user.age >= minAge && user.age <= maxAge).map(eu => eu.name)
+// console.log(eligible_users);
+
+// const orderPrices = [40, 20, 50, 10];
+// const totalPrice = orderPrices.reduce((total, price) => total + price, 0);
+// console.log(totalPrice);
+
+// const employees = [
+//     { id: 1, name: 'Alice', Eid: 'EMP001', 'Contact details': 'alice@example.com', Role: 'Manager', Designation: 'Project Manager', Experience: '5 years' },
+//     { id: 2, name: 'Bob', Eid: 'EMP002', 'Contact details': 'bob@example.com', Role: 'Engineer', Designation: 'Software Engineer', Experience: '3 years' },
+//     { id: 3, name: 'Charlie', Eid: 'EMP003', 'Contact details': 'charlie@example.com', Role: 'Analyst', Designation: 'Data Analyst', Experience: '2 years' },
+// ];
+
+// const employee = employees.find((e) => e.id === 2);
+// console.log(`Details of the employee\nname: ${employee.name}\nEid: ${employee.Eid}\nContact details: ${employee['Contact details']}\nRole: ${employee.Role}\nDesignation: ${employee.Designation}\nExperience: ${employee.Experience}`);
