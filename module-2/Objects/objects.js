@@ -31,7 +31,12 @@
 // //---Accessing Properties:
 // console.log(person['middle name']);
 // const propertyName = 'firstName';
-// console.log(person[propertyName])
+// console.log(person[propertyName]);
+
+// console.log(person.firstName);
+// console.log(person["firstName"])
+// console.log(person.getFullName())
+// console.log(person['getFullName']());
 
 //____________________________________________________
 
