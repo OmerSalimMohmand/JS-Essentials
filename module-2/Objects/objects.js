@@ -45,6 +45,17 @@
 // const person1 = new Person('Omer', 'Mohmand');
 // console.log(`Person 1 Detail: ${person1}`);
 
+// function Person(firstName, lastName){
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+
+//     this.getFullName = function(){
+//         return `${this.firstName} ${this.lastName}`;
+//     }
+// }
+
+// const p1 = new Person("Omer", "Salim");
+// console.log(p1.getFullName());
 
 //____________________________________________________
 
