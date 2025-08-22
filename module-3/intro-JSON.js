@@ -23,3 +23,8 @@
 // }
 // const jsonString = JSON.stringify(github_user);
 // console.log(jsonString);
+
+const jsonString = '{"username":"omersalim", "email":"omersalim.tech@gmail.com"}';
+const user = JSON.parse(jsonString);
+
+console.log(user)
