@@ -27,6 +27,7 @@ function placeOrder(food) {
       console.error(error);
     });
 
+// To check the normal flow of the program
 let i = 1;
 const timer = setInterval(() => {
   console.log(i);
