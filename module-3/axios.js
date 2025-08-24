@@ -1,6 +1,6 @@
-//--- Using Promise
-
 const { default: axios } = require("axios");
+
+//--- Using Promise
 
 // const axios = require('axios');
 
