@@ -20,6 +20,7 @@ const timerElement = document.getElementById('timer');
            }
        }
 
+    //--- Fisher-Yates shuffle algorithm: a common method for randomizing the order of elements in an array. 
   function shuffle(array) {
             for (let i = array.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
@@ -58,11 +59,11 @@ function checkMatch() {
         }
 
 function startGame() {
-            let timeLeft = 30;
+            timeLeft = 30;
             startbtn.disabled = true;
             score = 0; // Reset score to zero
             scoreElement.textContent = `Score: ${score}`;
-            startGameTimer(timeLeft);
+            startGameTimer();
             cards = shuffle(colors.concat(colors));
             selectedCards = [];
             gameContainer.innerHTML = '';
@@ -70,7 +71,7 @@ function startGame() {
             gameContainer.addEventListener('click', handleCardClick);
         }
 
-function startGameTimer(timeLeft) {
+function startGameTimer() {
             timerElement.textContent = `Time Left: ${timeLeft}`;
             gameInterval = setInterval(() => {
                 timeLeft--;
@@ -78,7 +79,6 @@ function startGameTimer(timeLeft) {
 
                 if (timeLeft === 0) {
                     clearInterval(gameInterval);
-                    let timeLeft = 30;
                     alert('Game Over!');
                     startbtn.disabled = false;
                 }
