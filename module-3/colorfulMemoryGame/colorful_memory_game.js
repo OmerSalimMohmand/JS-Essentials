@@ -3,7 +3,6 @@ let cards = shuffle(colors.concat(colors));
 let selectedCards = [];
 let score = 0;
 let timeLeft = 30;
-let gameInterval;
 
 const startbtn = document.getElementById('startbtn');
 const gameContainer = document.getElementById('game-container');
@@ -14,7 +13,7 @@ const timerElement = document.getElementById('timer');
            for (const color of cards) {
                const card = document.createElement('div');
                card.classList.add('card');
-               card.dataset.color = color;
+               card.dataset.color = color; //html dataset
                card.textContent = '?';
                gameContainer.appendChild(card);
            }
@@ -61,19 +60,19 @@ function checkMatch() {
 function startGame() {
             timeLeft = 30;
             startbtn.disabled = true;
+            gameContainer.classList.remove('disabled-div');
             score = 0; // Reset score to zero
             scoreElement.textContent = `Score: ${score}`;
-            startGameTimer();
             cards = shuffle(colors.concat(colors));
             selectedCards = [];
             gameContainer.innerHTML = '';
             generateCards();
-            gameContainer.addEventListener('click', handleCardClick);
+            startGameTimer();
         }
 
 function startGameTimer() {
             timerElement.textContent = `Time Left: ${timeLeft}`;
-            gameInterval = setInterval(() => {
+            const gameInterval = setInterval(() => {
                 timeLeft--;
                 timerElement.textContent = `Time Left: ${timeLeft}`;
 
@@ -81,8 +80,10 @@ function startGameTimer() {
                     clearInterval(gameInterval);
                     alert('Game Over!');
                     startbtn.disabled = false;
+                    gameContainer.classList.add('disabled-div');
                 }
             }, 1000);
         }
 
 startbtn.addEventListener('click', startGame);
+gameContainer.addEventListener('click', handleCardClick);
