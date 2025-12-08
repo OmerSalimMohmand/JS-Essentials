@@ -1,5 +1,4 @@
 function showweatherDetails(event) {
-    console.log(event)
     event.preventDefault();
     const city = document.getElementById('city').value;
     const apiKey = '0772af081699b577ace58a4492842be7';
