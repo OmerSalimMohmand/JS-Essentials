@@ -91,13 +91,6 @@
             }
         }
 
-        function updateSeatStatus(row, col, status) {
-            const seats = document.getElementsByClassName('seat');
-            const index = row * 3 + col;
-            seats[index].classList.remove('available', 'booked');
-            seats[index].classList.add(status);
-        }
-
         function bookSeat(row, col) {
             if (theaterSeats[row][col] === 'O') {
                 theaterSeats[row][col] = 'X';
@@ -106,6 +99,13 @@
             } else {
                 alert(`Seat ${String.fromCharCode(65 + row)}${col + 1} is already taken.`);
             }
+        }
+
+        function updateSeatStatus(row, col, status) {
+            const seats = document.getElementsByClassName('seat');
+            const index = row * 3 + col;
+            seats[index].classList.remove('available', 'booked');
+            seats[index].classList.add(status);
         }
 
         function bookRandomSeat() {
