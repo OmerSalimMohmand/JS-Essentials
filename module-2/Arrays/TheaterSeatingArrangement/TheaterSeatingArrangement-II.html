@@ -122,8 +122,11 @@
                 const randomIndex = Math.floor(Math.random() * availableSeats.length);
                 const { row, col } = availableSeats[randomIndex];
 
-                const seats = document.getElementsByClassName('seat')
-                const seat = seats[row * 3 + col]
+                // const seats = document.getElementsByClassName('seat')
+                // const seat = seats[row * 3 + col]
+
+                const seat = document.querySelector(`.seat:nth-child(${(row * 3 + col) + 1})`)
+
                 seat.click(); // Triger click event of the rondamly selected seat to book it.
 
             } else {
