@@ -1,4 +1,4 @@
-let testText = "The quick brown fox jumps over the lazy dog.";
+let testText = "The quick   brown fox jumps over the lazy dog.";
 let startTime, endTime;
 
 function startTest() {
@@ -18,14 +18,13 @@ function endTest() {
 
   document.getElementById("userInput").readOnly = true;
 
-  // Calculate time elapsed and words per minute (WPM)
   let timeElapsed = (endTime - startTime) / 1000; // in seconds
   let userTypedText = document.getElementById("userInput").value;
 
-  // Split the text using regex to count words correctly
-  let typedWords = userTypedText.split(/\s+/).filter(function (word) {
-    return word !== "";
-  }).length;
+  //   let typedWords = userTypedText.split(/\s/).filter(word => word !== "").length;
+
+  // regex \s+ itself takes care of empty words "" occurs after more than spaces
+  let typedWords = userTypedText.split(/\s+/).length;
 
   let wpm = 0; // Default value
 
